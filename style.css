@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #4b0000;
+
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    padding: 15px;
+}
+
+/* ========================= */
+/* TELA INICIAL */
+/* ========================= */
+
+.tela-inicio {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #4b0000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+
+.menu {
+    width: 100%;
+
+    max-width: 600px;
+
+    background: #700000;
+
+    padding: 45px 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 30px #200000;
+
+    border: 3px solid #d00000;
+}
+
+
+.icone {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+
+.menu h1 {
+    font-size: 45px;
+
+    margin-bottom: 5px;
+
+    color: white;
+
+    letter-spacing: 3px;
+}
+
+
+.menu h2 {
+    font-size: 20px;
+
+    color: #ff7777;
+
+    margin-bottom: 20px;
+}
+
+.menu p {
+    color: #ffcccc;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* ========================= */
+/* DETALHES */
+/* ========================= */
+.detalhes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.detalhes span {
+    background: #4b0000;
+    border: 2px solid #d00000;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 14px;
+}
+
+/* ========================= */
+/* BOTÃO JOGAR */
+/* ========================= */
+.botao-jogar {
+    width: 80%;
+    max-width: 350px;
+    padding: 15px;
+    margin: 5px auto;
+    display: block;
+    border: 3px solid #ff5555;
+    border-radius: 10px;
+    background: #d00000;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-jogar:hover {
+    background: #ff1a1a;
+    transform: scale(1.03);
+}
+
+.botao-jogar:active {
+    background: #8b0000;
+    transform: scale(0.98);
+}
+
+/* ========================= */
+/* BOTÃO COMO JOGAR */
+/* ========================= */
+.botao-como-jogar {
+    width: 80%;
+    max-width: 350px;
+    padding: 12px;
+    margin: 8px auto;
+    display: block;
+    border: 2px solid #ff5555;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.botao-como-jogar:hover {
+    background: #8b0000;
+}
+
+
+/* ========================= */
+/* TELA COMO JOGAR */
+/* ========================= */
+.tela-como-jogar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #4b0000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+
+.instrucoes {
+    background: #4b0000;
+    border: 2px solid #d00000;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+
+.instrucoes p {
+    margin: 8px;
+    color: white;
+}
+
+
+/* ========================= */
+/* JOGO ESCONDIDO NO INÍCIO */
+/* ========================= */
+.game {
+    display: none;
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+@media (max-width: 600px) {
+    .menu {
+        padding: 30px 20px;
+    }
+    .icone {
+        font-size: 50px;
+    }
+    .menu h1 {
+        font-size: 32px;
+    }
+    .menu h2 {
+        font-size: 17px;
+    }
+    .menu p {
+        font-size: 15px;
+    }
+    .detalhes {
+        gap: 8px;
+    }
+    .detalhes span {
+        font-size: 12px;
+    }
+    .botao-jogar {
+        width: 95%;
+    }
+    .botao-como-jogar {
+        width: 95%;
+    }
+}
+
+.game {
+    width: 95%;
+    max-width: 700px;
+
+    text-align: center;
+
+    background: #700000;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 0 25px #200000;
+}
+
+h1 {
+    margin-bottom: 10px;
+
+    color: white;
+}
+
+.game > p {
+    margin-bottom: 10px;
+}
+
+.fase {
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+    color: white;
+}
+
+.fase strong {
+    color: #ff7777;
+}
+
+
+/* ========================= */
+/* LABIRINTO */
+/* ========================= */
+
+.labirinto-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+#labirinto {
+    display: block;
+
+    width: 100%;
+    max-width: 600px;
+
+    height: auto;
+
+    border: 3px solid #220000;
+
+    background: white;
+}
+
+
+/* ========================= */
+/* CONTROLES */
+/* ========================= */
+
+.controles {
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.linha-controles {
+    display: flex;
+
+    gap: 8px;
+}
+
+.controle {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 65px;
+    height: 65px;
+
+    margin: 0;
+    padding: 0;
+
+    background: #d00000;
+
+    color: white;
+
+    border: 3px solid #ff5555;
+
+    border-radius: 12px;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: manipulation;
+}
+
+.controle:hover {
+    background: #ff1a1a;
+}
+
+.controle:active {
+    background: #8b0000;
+
+    transform: scale(0.95);
+}
+
+
+/* ========================= */
+/* INFORMAÇÕES */
+/* ========================= */
+
+.info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    margin: 15px 0;
+
+    font-size: 18px;
+}
+
+.info strong {
+    color: #ff7777;
+}
+
+
+/* ========================= */
+/* MENSAGEM */
+/* ========================= */
+
+#mensagem {
+    min-height: 28px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #ffcccc;
+}
+
+
+/* ========================= */
+/* PRÓXIMA FASE */
+/* ========================= */
+
+#proximaFase {
+    display: none;
+
+    margin: 10px auto 0;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #d00000;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#proximaFase:hover {
+    background: #ff1a1a;
+}
+
+#proximaFase:active {
+    background: #8b0000;
+
+    transform: scale(0.97);
+}
+
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .game {
+        width: 100%;
+
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .game > p {
+        font-size: 14px;
+    }
+
+    .fase {
+        font-size: 18px;
+    }
+
+    .info {
+        gap: 15px;
+
+        font-size: 14px;
+    }
+
+    .controle {
+        width: 60px;
+        height: 60px;
+
+        font-size: 25px;
+    }
+
+    #proximaFase {
+        font-size: 15px;
+
+        padding: 10px 20px;
+    }
+}

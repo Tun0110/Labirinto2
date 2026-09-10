@@ -1,0 +1,314 @@
+<!-- ============================= 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Jogo do Labirinto</title>
+</head>
+<body>
+    
+    TELA INICIAL -->
+    <!-- ============================= 
+    <div id="telaInicio" class="tela-inicio">
+        <div class="menu">
+            <div class="icone">🧩</div>
+            <h1>LABIRINTO</h1>
+            <h2>O DESAFIO COMEÇOU!</h2>
+            <p>
+                Encontre a saída e complete
+                todas as fases.
+            </p>
+            <div class="detalhes">
+                <span>🧩 3 Fases</span>
+                <span>⏱️ Cronômetro</span>
+                <span>🏆 Pontuação</span>
+            </div>
+            <button class="botao-jogar" onclick="iniciarJogo()">▶️ JOGAR</button>
+            <button class="botao-como-jogar" onclick="mostrarComoJogar()">❓ COMO JOGAR</button>
+        </div>
+    </div>
+
+
+     ============================= -->
+    <!-- COMO JOGAR -->
+    <!-- =============================
+    <div
+        id="telaComoJogar"
+        class="tela-como-jogar">
+        <div class="menu">
+            <h1>❓ COMO JOGAR</h1>
+            <p>
+                Encontre o caminho até a saída
+                verde sem atravessar as paredes.
+            </p>
+            <div class="instrucoes">
+                <p>⬆️ Andar para cima</p>
+                <p>⬇️ Andar para baixo</p>
+                <p>⬅️ Andar para esquerda</p>
+                <p>➡️ Andar para direita</p>
+            </div>
+            <p>
+                Complete as 3 fases para vencer!
+            </p>
+            <button class="botao-jogar" onclick="fecharComoJogar()">VOLTAR</button>
+        </div>
+    </div>
+<div class="game">
+    <h1>🧩 Jogo do Labirinto</h1>
+    <p>Use as setas do teclado para encontrar a saída!</p>
+    <div class="fase">
+        Fase <strong id="fase">1</strong>/3
+    </div>
+    <div class="labirinto-container">
+        <canvas id="labirinto" width="600" height="600"></canvas>
+    </div>
+    <div class="controles">
+    <button class="controle cima" onclick="moverJogador('cima')">⬆️</button>
+    <div class="linha-controles"><button class="controle" onclick="moverJogador('esquerda')">⬅️</button>
+        <button class="controle" onclick="moverJogador('baixo')">⬇️</button>
+        <button class="controle" onclick="moverJogador('direita')">➡️</button>
+    </div>
+    </div>
+    <div class="info">
+        <span>⏱️ Tempo: <strong id="tempo">0</strong>s</span>
+        <span>🏆 Movimentos: <strong id="movimentos">0</strong></span>
+    </div>
+    <p id="mensagem"></p>
+    <button id="proximaFase" onclick="proximaFase()">➡️ Próxima Fase</button>
+</div>
+<script src="script.js"></script>
+ ============================= -->
+
+ <!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Jogo do Labirinto</title>
+
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- TELA INICIAL -->
+    <!-- ============================= -->
+
+    <div id="telaInicio" class="tela-inicio">
+
+        <div class="menu">
+
+            <div class="icone">🧩</div>
+
+            <h1>LABIRINTO</h1>
+
+            <h2>O DESAFIO COMEÇOU!</h2>
+
+            <p>
+                Encontre a saída e complete
+                todas as fases.
+            </p>
+
+            <div class="detalhes">
+
+                <span>🧩 3 Fases</span>
+
+                <span>⏱️ Cronômetro</span>
+
+                <span>🏆 Pontuação</span>
+
+            </div>
+
+            <button
+                class="botao-jogar"
+                onclick="iniciarJogo()">
+
+                ▶️ JOGAR
+
+            </button>
+
+            <button
+                class="botao-como-jogar"
+                onclick="mostrarComoJogar()">
+
+                ❓ COMO JOGAR
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- COMO JOGAR -->
+    <!-- ============================= -->
+
+    <div
+        id="telaComoJogar"
+        class="tela-como-jogar">
+
+        <div class="menu">
+
+            <h1>❓ COMO JOGAR</h1>
+
+            <p>
+                Encontre o caminho até a saída
+                verde sem atravessar as paredes.
+            </p>
+
+            <div class="instrucoes">
+
+                <p>⬆️ Andar para cima</p>
+
+                <p>⬇️ Andar para baixo</p>
+
+                <p>⬅️ Andar para esquerda</p>
+
+                <p>➡️ Andar para direita</p>
+
+            </div>
+
+            <p>
+                Complete as 3 fases para vencer!
+            </p>
+
+            <button
+                class="botao-jogar"
+                onclick="fecharComoJogar()">
+
+                VOLTAR
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- JOGO -->
+    <!-- ============================= -->
+
+    <div
+        id="jogo"
+        class="game">
+
+        <h1>🧩 Jogo do Labirinto</h1>
+
+        <p class="instrucao">
+            Encontre a saída sem atravessar as paredes!
+        </p>
+
+        <div class="fase">
+
+            FASE
+            <strong id="fase">1</strong>
+            / 3
+
+        </div>
+
+
+        <div class="labirinto-container">
+
+            <canvas
+                id="labirinto"
+                width="600"
+                height="600">
+            </canvas>
+
+        </div>
+
+
+        <!-- CONTROLES -->
+
+        <div class="controles">
+
+            <button
+                class="controle cima"
+                onclick="moverJogador('cima')">
+
+                ⬆️
+
+            </button>
+
+            <div class="linha-controles">
+
+                <button
+                    class="controle"
+                    onclick="moverJogador('esquerda')">
+
+                    ⬅️
+
+                </button>
+
+                <button
+                    class="controle"
+                    onclick="moverJogador('baixo')">
+
+                    ⬇️
+
+                </button>
+
+                <button
+                    class="controle"
+                    onclick="moverJogador('direita')">
+
+                    ➡️
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="info">
+
+            <span>
+                ⏱️ Tempo:
+                <strong id="tempo">0</strong>s
+            </span>
+
+            <span>
+                🏆 Movimentos:
+                <strong id="movimentos">0</strong>
+            </span>
+
+        </div>
+
+
+        <p id="mensagem"></p>
+
+
+        <button
+            id="proximaFase"
+            onclick="proximaFase()">
+
+            ➡️ Próxima Fase
+
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+</body>
+</html>
