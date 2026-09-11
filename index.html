@@ -1,4 +1,3 @@
-<!-- ============================= 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,142 +7,74 @@
 <title>Jogo do Labirinto</title>
 </head>
 <body>
-    
-    TELA INICIAL -->
-    <!-- ============================= 
-    <div id="telaInicio" class="tela-inicio">
-        <div class="menu">
-            <div class="icone">🧩</div>
-            <h1>LABIRINTO</h1>
-            <h2>O DESAFIO COMEÇOU!</h2>
-            <p>
-                Encontre a saída e complete
-                todas as fases.
-            </p>
-            <div class="detalhes">
-                <span>🧩 3 Fases</span>
-                <span>⏱️ Cronômetro</span>
-                <span>🏆 Pontuação</span>
-            </div>
-            <button class="botao-jogar" onclick="iniciarJogo()">▶️ JOGAR</button>
-            <button class="botao-como-jogar" onclick="mostrarComoJogar()">❓ COMO JOGAR</button>
-        </div>
-    </div>
-
-
-     ============================= -->
-    <!-- COMO JOGAR -->
-    <!-- =============================
-    <div
-        id="telaComoJogar"
-        class="tela-como-jogar">
-        <div class="menu">
-            <h1>❓ COMO JOGAR</h1>
-            <p>
-                Encontre o caminho até a saída
-                verde sem atravessar as paredes.
-            </p>
-            <div class="instrucoes">
-                <p>⬆️ Andar para cima</p>
-                <p>⬇️ Andar para baixo</p>
-                <p>⬅️ Andar para esquerda</p>
-                <p>➡️ Andar para direita</p>
-            </div>
-            <p>
-                Complete as 3 fases para vencer!
-            </p>
-            <button class="botao-jogar" onclick="fecharComoJogar()">VOLTAR</button>
-        </div>
-    </div>
-<div class="game">
-    <h1>🧩 Jogo do Labirinto</h1>
-    <p>Use as setas do teclado para encontrar a saída!</p>
-    <div class="fase">
-        Fase <strong id="fase">1</strong>/3
-    </div>
-    <div class="labirinto-container">
-        <canvas id="labirinto" width="600" height="600"></canvas>
-    </div>
-    <div class="controles">
-    <button class="controle cima" onclick="moverJogador('cima')">⬆️</button>
-    <div class="linha-controles"><button class="controle" onclick="moverJogador('esquerda')">⬅️</button>
-        <button class="controle" onclick="moverJogador('baixo')">⬇️</button>
-        <button class="controle" onclick="moverJogador('direita')">➡️</button>
-    </div>
-    </div>
-    <div class="info">
-        <span>⏱️ Tempo: <strong id="tempo">0</strong>s</span>
-        <span>🏆 Movimentos: <strong id="movimentos">0</strong></span>
-    </div>
-    <p id="mensagem"></p>
-    <button id="proximaFase" onclick="proximaFase()">➡️ Próxima Fase</button>
-</div>
-<script src="script.js"></script>
- ============================= -->
-
- <!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <link rel="stylesheet" href="style.css">
-
-    <title>Jogo do Labirinto</title>
-
-</head>
-
-<body>
-
-    <!-- ============================= -->
+    <!-- ================================= -->
     <!-- TELA INICIAL -->
-    <!-- ============================= -->
+    <!-- ================================= -->
 
-    <div id="telaInicio" class="tela-inicio">
+    <div id="telaInicio">
 
-        <div class="menu">
+        <div class="menu-box">
 
-            <div class="icone">🧩</div>
+            <div class="icone">
+                🧠
+            </div>
 
-            <h1>LABIRINTO</h1>
-
-            <h2>O DESAFIO COMEÇOU!</h2>
+            <h1>
+                LABIRINTO
+            </h1>
 
             <p>
-                Encontre a saída e complete
-                todas as fases.
+                Encontre a saída sem atravessar
+                as paredes!
             </p>
+
+
+            <!-- DETALHES -->
 
             <div class="detalhes">
 
-                <span>🧩 3 Fases</span>
+                <span>
+                    🎮 10 Fases
+                </span>
 
-                <span>⏱️ Cronômetro</span>
+                <span>
+                    ⏱️ Cronômetro
+                </span>
 
-                <span>🏆 Pontuação</span>
+                <span>
+                    🏆 Pontuação
+                </span>
 
             </div>
+
+
+            <!-- JOGAR -->
 
             <button
                 class="botao-jogar"
-                onclick="iniciarJogo()">
-
-                ▶️ JOGAR
-
+                onclick="iniciarJogo()"
+            >
+                ▶️JOGAR
             </button>
+
+
+            <!-- TODAS AS FASES -->
+
+            <button
+                class="botao-fases"
+                onclick="mostrarFases()"
+            >
+                📋TODAS AS FASES
+            </button>
+
+
+            <!-- COMO JOGAR -->
 
             <button
                 class="botao-como-jogar"
-                onclick="mostrarComoJogar()">
-
-                ❓ COMO JOGAR
-
+                onclick="mostrarComoJogar()"
+            >
+                ❓COMO JOGAR
             </button>
 
         </div>
@@ -151,45 +82,65 @@
     </div>
 
 
-    <!-- ============================= -->
+
+    <!-- ================================= -->
     <!-- COMO JOGAR -->
-    <!-- ============================= -->
+    <!-- ================================= -->
 
     <div
         id="telaComoJogar"
-        class="tela-como-jogar">
+        class="tela-como-jogar"
+    >
 
-        <div class="menu">
+        <div class="menu-box">
 
-            <h1>❓ COMO JOGAR</h1>
+            <div class="icone">
+                🎮
+            </div>
+
+            <h1>
+                COMO JOGAR
+            </h1>
+
 
             <p>
                 Encontre o caminho até a saída
                 verde sem atravessar as paredes.
             </p>
 
+
             <div class="instrucoes">
 
-                <p>⬆️ Andar para cima</p>
+                <p>
+                    ⬆️ Use a seta para cima
+                </p>
 
-                <p>⬇️ Andar para baixo</p>
+                <p>
+                    ⬇️ Use a seta para baixo
+                </p>
 
-                <p>⬅️ Andar para esquerda</p>
+                <p>
+                    ⬅️ Use a seta para esquerda
+                </p>
 
-                <p>➡️ Andar para direita</p>
+                <p>
+                    ➡️ Use a seta para direita
+                </p>
 
             </div>
 
+
             <p>
-                Complete as 3 fases para vencer!
+                No celular, deslize o dedo
+                sobre o labirinto para movimentar.
             </p>
+
 
             <button
                 class="botao-jogar"
-                onclick="fecharComoJogar()">
-
-                VOLTAR
-
+                onclick="fecharComoJogar()"
+            >
+                ⬅️VOLTAR
             </button>
 
         </div>
@@ -197,113 +148,493 @@
     </div>
 
 
-    <!-- ============================= -->
+
+    <!-- ================================= -->
     <!-- JOGO -->
-    <!-- ============================= -->
+    <!-- ================================= -->
 
     <div
         id="jogo"
-        class="game">
+        class="game"
+    >
 
-        <h1>🧩 Jogo do Labirinto</h1>
 
-        <p class="instrucao">
-            Encontre a saída sem atravessar as paredes!
-        </p>
+        <!-- CABEÇALHO -->
 
-        <div class="fase">
+        <div class="cabecalho-jogo">
 
-            FASE
-            <strong id="fase">1</strong>
-            / 3
+            <h1>
+                🧠Jogo do Labirinto
+            </h1>
+
+            <p>
+                Encontre a saída sem atravessar
+                as paredes!
+            </p>
+
+
+            <div class="fase-info">
+
+                FASE
+
+                <span id="fase">
+                    1
+                </span>
+
+                / 10
+
+            </div>
 
         </div>
 
+
+
+        <!-- BOTÃO VOLTAR À TELA INICIAL -->
+
+        <button
+            class="botao-inicio"
+            onclick="voltarInicio()"
+        >
+            🏠VOLTAR À TELA INICIAL
+        </button>
+
+
+
+        <!-- ================================= -->
+        <!-- LABIRINTO -->
+        <!-- ================================= -->
 
         <div class="labirinto-container">
 
             <canvas
                 id="labirinto"
                 width="600"
-                height="600">
+                height="600"
+            >
             </canvas>
 
         </div>
 
 
-        <!-- CONTROLES -->
 
-        <div class="controles">
-
-            <button
-                class="controle cima"
-                onclick="moverJogador('cima')">
-
-                ⬆️
-
-            </button>
-
-            <div class="linha-controles">
-
-                <button
-                    class="controle"
-                    onclick="moverJogador('esquerda')">
-
-                    ⬅️
-
-                </button>
-
-                <button
-                    class="controle"
-                    onclick="moverJogador('baixo')">
-
-                    ⬇️
-
-                </button>
-
-                <button
-                    class="controle"
-                    onclick="moverJogador('direita')">
-
-                    ➡️
-
-                </button>
-
-            </div>
-
-        </div>
-
-
+        <!-- ================================= -->
         <!-- INFORMAÇÕES -->
+        <!-- ================================= -->
 
-        <div class="info">
+        <div class="informacoes">
 
             <span>
-                ⏱️ Tempo:
-                <strong id="tempo">0</strong>s
+
+                ⏱️Tempo:
+
+                <strong id="tempo">
+                    0
+                </strong>
+
+                s
+
             </span>
 
+
             <span>
-                🏆 Movimentos:
-                <strong id="movimentos">0</strong>
+
+                🏆Movimentos:
+
+                <strong id="movimentos">
+                    0
+                </strong>
+
             </span>
 
         </div>
 
+
+
+        <!-- MENSAGEM -->
 
         <p id="mensagem"></p>
 
 
+
+        <!-- PRÓXIMA FASE -->
+
         <button
             id="proximaFase"
-            onclick="proximaFase()">
-
-            ➡️ Próxima Fase
-
+            onclick="proximaFase()"
+        >
+            ➡️PRÓXIMA FASE
         </button>
 
     </div>
 
+
+
+    <!-- ================================= -->
+    <!-- TELA FINAL -->
+    <!-- ================================= -->
+
+    <div
+        id="telaFinal"
+        class="tela-final"
+    >
+
+        <div class="final-box">
+
+
+            <!-- TROFÉU -->
+
+            <div class="trofeu">
+                🏆
+            </div>
+
+
+            <h1>
+                VOCÊ VENCEU!
+            </h1>
+
+
+            <h2>
+                🎉 PARABÉNS! 🎉
+            </h2>
+
+
+            <p>
+                Você completou todas as
+                10 fases!
+            </p>
+
+
+
+            <!-- ================================= -->
+            <!-- MOEDAS -->
+            <!-- ================================= -->
+
+            <div class="estatistica-final">
+
+                🪙
+
+                <strong id="moedasFinal">
+                    0
+                </strong>
+
+                <span>
+                    MOEDAS
+                </span>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- PERDAS -->
+            <!-- ================================= -->
+
+            <div class="estatistica-final">
+
+                ❌
+
+                <strong id="perdasFinal">
+                    0
+                </strong>
+
+                <span>
+                    VEZES QUE PERDEU
+                </span>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- TEMPO TOTAL -->
+            <!-- ================================= -->
+
+            <div class="estatistica-final">
+
+                ⏱️
+
+                <strong id="tempoFinal">
+                    0s
+                </strong>
+
+                <span>
+                    TEMPO TOTAL
+                </span>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- RECORDE -->
+            <!-- ================================= -->
+
+            <div
+                class="estatistica-final recorde"
+            >
+
+                🏆
+
+                <strong id="recordeFinal">
+                    --
+                </strong>
+
+                <span>
+                    RECORDE
+                </span>
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- RECOMPENSA -->
+            <!-- ================================= -->
+
+            <div class="recompensa">
+
+                🎁PRÊMIO DESBLOQUEADO!
+
+            </div>
+
+
+
+            <!-- ================================= -->
+            <!-- JOGAR NOVAMENTE -->
+            <!-- ================================= -->
+
+            <button
+                class="botao-final"
+                onclick="jogarNovamente()"
+            >
+                🔄JOGAR NOVAMENTE
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================================= -->
+    <!-- TODAS AS FASES -->
+    <!-- ================================= -->
+
+    <div
+        id="telaFases"
+        class="tela-fases"
+    >
+
+        <div class="fases-box">
+
+
+            <h1>
+                🎮TODAS AS FASES
+            </h1>
+
+
+            <p>
+                Escolha uma fase para jogar:
+            </p>
+
+
+
+            <div class="lista-fases">
+
+
+                <!-- ================= -->
+                <!-- FASE 1 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(1)"
+                >
+
+                    🏁FASE 1
+
+                    <small>
+                        60 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 2 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(2)"
+                >
+
+                    🔥 FASE 2
+
+                    <small>
+                        70 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 3 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(3)"
+                >
+
+                    💀 FASE 3
+
+                    <small>
+                        80 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 4 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(4)"
+                >
+
+                    ⚡ FASE 4
+
+                    <small>
+                        90 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 5 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(5)"
+                >
+
+                    🔥 FASE 5
+
+                    <small>
+                        105 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 6 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(6)"
+                >
+
+                    👑 FASE 6
+
+                    <small>
+                        120 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 7 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(7)"
+                >
+
+                    ⚡ FASE 7
+
+                    <small>
+                        130 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 8 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(8)"
+                >
+
+                    💀 FASE 8
+
+                    <small>
+                        140 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 9 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(9)"
+                >
+
+                    🔥 FASE 9
+
+                    <small>
+                        150 segundos
+                    </small>
+
+                </button>
+
+
+
+                <!-- ================= -->
+                <!-- FASE 10 -->
+                <!-- ================= -->
+
+                <button
+                    onclick="escolherFase(10)"
+                >
+
+                    👑 FASE 10
+
+                    <small>
+                        165 segundos
+                    </small>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- BOTÃO VOLTAR -->
+
+            <button
+                class="botao-voltar"
+                onclick="fecharFases()"
+            >
+                ⬅️ VOLTAR
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 

@@ -1,411 +1,361 @@
+/* ========================================
+   RESET
+======================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ========================================
+   BODY
+======================================== */
+
 body {
     min-height: 100vh;
 
-    background: #4b0000;
+    font-family: Arial, Helvetica, sans-serif;
 
-    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at center,
+            #3d0000 0%,
+            #210000 55%,
+            #100000 100%
+        );
+
+    color: white;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: white;
-
-    padding: 15px;
+    overflow-x: hidden;
 }
 
-/* ========================= */
-/* TELA INICIAL */
-/* ========================= */
 
-.tela-inicio {
+/* ========================================
+   TELA INICIAL
+======================================== */
+
+#telaInicio {
     position: fixed;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100%;
     height: 100vh;
 
-    background: #4b0000;
-
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
-    z-index: 1000;
+    background:
+        radial-gradient(
+            circle,
+            #420000,
+            #1b0000 70%
+        );
+
+    z-index: 10000;
 
     padding: 20px;
 }
 
 
-.menu {
-    width: 100%;
+/* FORMULÁRIO PRETO */
 
-    max-width: 600px;
+.menu-box {
+    width: 90%;
+    max-width: 520px;
 
-    background: #700000;
+    padding: 45px 35px;
 
-    padding: 45px 30px;
+    background:
+        linear-gradient(
+            145deg,
+            #090909,
+            #151515
+        );
 
-    border-radius: 20px;
+    border: 2px solid #8b0000;
+
+    border-radius: 25px;
 
     text-align: center;
 
     box-shadow:
-        0 0 30px #200000;
-
-    border: 3px solid #d00000;
+        0 0 20px rgba(0, 0, 0, 0.9),
+        0 0 45px rgba(100, 0, 0, 0.5);
 }
 
 
-.icone {
-    font-size: 65px;
+/* TITULO */
 
-    margin-bottom: 10px;
+.menu-box h1 {
+    font-size: 46px;
+
+    color: #ffdddd;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 10px #8b0000;
 }
 
 
-.menu h1 {
-    font-size: 45px;
+.menu-box p {
+    color: #d6d6d6;
 
-    margin-bottom: 5px;
+    font-size: 18px;
 
-    color: white;
-
-    letter-spacing: 3px;
+    margin-bottom: 35px;
 }
 
 
-.menu h2 {
-    font-size: 20px;
+/* ========================================
+   BOTÕES DO MENU
+======================================== */
 
-    color: #ff7777;
-
-    margin-bottom: 20px;
-}
-
-.menu p {
-    color: #ffcccc;
-    font-size: 17px;
-    line-height: 1.5;
-    margin-bottom: 25px;
-}
-
-/* ========================= */
-/* DETALHES */
-/* ========================= */
-.detalhes {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.detalhes span {
-    background: #4b0000;
-    border: 2px solid #d00000;
-    border-radius: 8px;
-    padding: 10px 12px;
-    color: white;
-    font-size: 14px;
-}
-
-/* ========================= */
-/* BOTÃO JOGAR */
-/* ========================= */
-.botao-jogar {
-    width: 80%;
-    max-width: 350px;
-    padding: 15px;
-    margin: 5px auto;
+.menu-box button {
     display: block;
-    border: 3px solid #ff5555;
-    border-radius: 10px;
-    background: #d00000;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
-}
 
-.botao-jogar:hover {
-    background: #ff1a1a;
-    transform: scale(1.03);
-}
-
-.botao-jogar:active {
-    background: #8b0000;
-    transform: scale(0.98);
-}
-
-/* ========================= */
-/* BOTÃO COMO JOGAR */
-/* ========================= */
-.botao-como-jogar {
-    width: 80%;
-    max-width: 350px;
-    padding: 12px;
-    margin: 8px auto;
-    display: block;
-    border: 2px solid #ff5555;
-    border-radius: 10px;
-    background: transparent;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-
-.botao-como-jogar:hover {
-    background: #8b0000;
-}
-
-
-/* ========================= */
-/* TELA COMO JOGAR */
-/* ========================= */
-.tela-como-jogar {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100vh;
-    background: #4b0000;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    padding: 20px;
-}
 
+    margin: 14px 0;
 
-.instrucoes {
-    background: #4b0000;
-    border: 2px solid #d00000;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-}
+    padding: 16px;
 
+    border-radius: 13px;
 
-.instrucoes p {
-    margin: 8px;
+    border: 2px solid #8b0000;
+
+    background:
+        linear-gradient(
+            145deg,
+            #680000,
+            #3d0000
+        );
+
     color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
 }
 
 
-/* ========================= */
-/* JOGO ESCONDIDO NO INÍCIO */
-/* ========================= */
-.game {
-    display: none;
+.menu-box button:hover {
+    background:
+        linear-gradient(
+            145deg,
+            #a50000,
+            #650000
+        );
+
+    border-color: #ff4d4d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 7px 20px rgba(120, 0, 0, 0.5);
 }
 
 
-/* ========================= */
-/* CELULAR */
-/* ========================= */
-@media (max-width: 600px) {
-    .menu {
-        padding: 30px 20px;
-    }
-    .icone {
-        font-size: 50px;
-    }
-    .menu h1 {
-        font-size: 32px;
-    }
-    .menu h2 {
-        font-size: 17px;
-    }
-    .menu p {
-        font-size: 15px;
-    }
-    .detalhes {
-        gap: 8px;
-    }
-    .detalhes span {
-        font-size: 12px;
-    }
-    .botao-jogar {
-        width: 95%;
-    }
-    .botao-como-jogar {
-        width: 95%;
-    }
-}
+/* ========================================
+   JOGO
+======================================== */
 
 .game {
     width: 95%;
-    max-width: 700px;
+
+    max-width: 1000px;
+
+    min-height: 90vh;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #470000,
+            #300000
+        );
+
+    border: 2px solid #720000;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 30px rgba(0, 0, 0, 0.8);
 
     text-align: center;
-
-    background: #700000;
-
-    padding: 20px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 0 25px #200000;
-}
-
-h1 {
-    margin-bottom: 10px;
-
-    color: white;
-}
-
-.game > p {
-    margin-bottom: 10px;
-}
-
-.fase {
-    font-size: 20px;
-
-    margin-bottom: 10px;
-
-    color: white;
-}
-
-.fase strong {
-    color: #ff7777;
 }
 
 
-/* ========================= */
-/* LABIRINTO */
-/* ========================= */
+/* ========================================
+   CABEÇALHO
+======================================== */
 
-.labirinto-container {
-    width: 100%;
+.cabecalho-jogo h1 {
+    font-size: 40px;
 
-    display: flex;
-    justify-content: center;
+    margin-bottom: 8px;
 
-    background: white;
+    color: #ffffff;
 
-    padding: 8px;
+    text-shadow:
+        0 0 10px #9b0000;
+}
+
+
+.cabecalho-jogo p {
+    font-size: 18px;
+
+    color: #dddddd;
+
+    margin-bottom: 12px;
+}
+
+
+.fase-info {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #ffdddd;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   BOTÃO VOLTAR
+======================================== */
+
+.botao-inicio {
+    padding: 12px 25px;
+
+    margin-bottom: 20px;
+
+    background: #160000;
+
+    color: #ffffff;
+
+    border: 2px solid #7c0000;
 
     border-radius: 10px;
 
-    overflow: hidden;
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
 }
+
+
+.botao-inicio:hover {
+    background: #700000;
+
+    border-color: #ff4444;
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 15px rgba(180, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   LABIRINTO
+======================================== */
+
+.labirinto-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 15px;
+
+    background: #080808;
+
+    border: 3px solid #720000;
+
+    border-radius: 18px;
+
+    box-shadow:
+        inset 0 0 20px #000,
+        0 0 20px rgba(0, 0, 0, 0.7);
+}
+
 
 #labirinto {
     display: block;
 
-    width: 100%;
-    max-width: 600px;
+    width: min(80vw, 700px);
 
     height: auto;
 
-    border: 3px solid #220000;
+    background: #111111;
 
-    background: white;
-}
+    border-radius: 5px;
 
-
-/* ========================= */
-/* CONTROLES */
-/* ========================= */
-
-.controles {
-    margin-top: 15px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 8px;
-}
-
-.linha-controles {
-    display: flex;
-
-    gap: 8px;
-}
-
-.controle {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    width: 65px;
-    height: 65px;
-
-    margin: 0;
-    padding: 0;
-
-    background: #d00000;
-
-    color: white;
-
-    border: 3px solid #ff5555;
-
-    border-radius: 12px;
-
-    font-size: 28px;
-
-    cursor: pointer;
+    touch-action: none;
 
     user-select: none;
+
     -webkit-user-select: none;
-
-    touch-action: manipulation;
-}
-
-.controle:hover {
-    background: #ff1a1a;
-}
-
-.controle:active {
-    background: #8b0000;
-
-    transform: scale(0.95);
 }
 
 
-/* ========================= */
-/* INFORMAÇÕES */
-/* ========================= */
+/* ========================================
+   INFORMAÇÕES
+======================================== */
 
-.info {
+.informacoes {
     display: flex;
 
     justify-content: center;
+
+    align-items: center;
 
     gap: 40px;
 
-    margin: 15px 0;
+    margin-top: 20px;
 
-    font-size: 18px;
+    font-size: 20px;
 }
 
-.info strong {
+
+.informacoes strong {
     color: #ff7777;
+
+    font-size: 23px;
 }
 
 
-/* ========================= */
-/* MENSAGEM */
-/* ========================= */
+/* ========================================
+   MENSAGEM
+======================================== */
 
 #mensagem {
-    min-height: 28px;
+    min-height: 35px;
+
+    margin-top: 18px;
 
     font-size: 20px;
 
@@ -415,87 +365,475 @@ h1 {
 }
 
 
-/* ========================= */
-/* PRÓXIMA FASE */
-/* ========================= */
+/* ========================================
+   BOTÃO PRÓXIMA FASE
+======================================== */
 
 #proximaFase {
     display: none;
 
-    margin: 10px auto 0;
+    margin-top: 10px;
 
-    padding: 12px 25px;
+    padding: 14px 30px;
 
-    border: none;
-
-    border-radius: 8px;
-
-    background: #d00000;
+    background:
+        linear-gradient(
+            145deg,
+            #9b0000,
+            #570000
+        );
 
     color: white;
+
+    border: 2px solid #ff4d4d;
+
+    border-radius: 12px;
 
     font-size: 17px;
 
     font-weight: bold;
 
     cursor: pointer;
+
+    transition: 0.25s;
 }
+
 
 #proximaFase:hover {
-    background: #ff1a1a;
+    transform: scale(1.05);
+
+    background: #b00000;
+
+    box-shadow:
+        0 0 20px rgba(220, 0, 0, 0.5);
 }
 
-#proximaFase:active {
-    background: #8b0000;
 
-    transform: scale(0.97);
+/* ========================================
+   TELA DE FASES
+======================================== */
+
+.tela-fases {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle,
+            #420000,
+            #170000
+        );
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9998;
+
+    padding: 20px;
 }
 
 
-/* ========================= */
-/* CELULAR */
-/* ========================= */
+.fases-box {
+    width: 90%;
+
+    max-width: 650px;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #080808,
+            #171717
+        );
+
+    border: 2px solid #820000;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 35px rgba(0, 0, 0, 0.9);
+}
+
+
+.fases-box h1 {
+    font-size: 34px;
+
+    color: #ffffff;
+
+    margin-bottom: 10px;
+}
+
+
+.fases-box p {
+    color: #bbbbbb;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   LISTA DE FASES
+======================================== */
+
+.lista-fases {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.lista-fases button {
+    min-height: 85px;
+
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #570000,
+            #300000
+        );
+
+    color: white;
+
+    border: 2px solid #820000;
+
+    border-radius: 14px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.lista-fases button:hover {
+    background:
+        linear-gradient(
+            145deg,
+            #900000,
+            #500000
+        );
+
+    border-color: #ff5555;
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 18px rgba(180, 0, 0, 0.5);
+}
+
+
+.lista-fases small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #bbbbbb;
+
+    font-size: 13px;
+}
+
+
+/* VOLTAR */
+
+.botao-voltar {
+    margin-top: 22px;
+
+    padding: 12px 30px;
+
+    background: #111111;
+
+    color: white;
+
+    border: 2px solid #650000;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.botao-voltar:hover {
+    background: #650000;
+
+    border-color: #ff4444;
+}
+
+
+/* ========================================
+   TELA FINAL
+======================================== */
+
+.tela-final {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle,
+            #420000,
+            #130000
+        );
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10001;
+
+    padding: 20px;
+}
+
+
+.final-box {
+    width: 90%;
+
+    max-width: 550px;
+
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #080808,
+            #171717
+        );
+
+    border: 2px solid #8b0000;
+
+    border-radius: 24px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.9);
+}
+
+
+.trofeu {
+    font-size: 70px;
+
+    margin-bottom: 5px;
+}
+
+
+.final-box h1 {
+    color: #ffdddd;
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+
+.final-box h2 {
+    color: #ff7777;
+
+    margin-bottom: 12px;
+}
+
+
+.final-box p {
+    color: #cccccc;
+
+    margin-bottom: 20px;
+}
+
+
+/* ========================================
+   ESTATÍSTICAS
+======================================== */
+
+.estatistica-final {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 10px auto;
+
+    padding: 13px;
+
+    background: #160000;
+
+    border: 1px solid #650000;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 17px;
+}
+
+
+.estatistica-final strong {
+    color: #ff7777;
+
+    font-size: 24px;
+}
+
+
+.estatistica-final span {
+    color: #bbbbbb;
+
+    font-size: 14px;
+}
+
+
+.recorde {
+    border-color: #8b0000;
+}
+
+
+/* ========================================
+   RECOMPENSA
+======================================== */
+
+.recompensa {
+    margin: 20px 0;
+
+    padding: 15px;
+
+    background: #300000;
+
+    border: 2px solid #760000;
+
+    border-radius: 12px;
+
+    color: #ffcccc;
+
+    font-weight: bold;
+}
+
+
+.botao-final {
+    width: 100%;
+
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #8b0000,
+            #4b0000
+        );
+
+    color: white;
+
+    border: 2px solid #d00000;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.botao-final:hover {
+    background: #b00000;
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(200, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 10px;
+    .menu-box {
+        padding: 30px 20px;
+    }
+
+    .menu-box h1 {
+        font-size: 34px;
     }
 
     .game {
-        width: 100%;
+        width: 96%;
 
-        padding: 12px;
+        padding: 18px;
+
+        margin: 15px auto;
     }
 
-    h1 {
-        font-size: 24px;
+    .cabecalho-jogo h1 {
+        font-size: 28px;
     }
 
-    .game > p {
-        font-size: 14px;
-    }
-
-    .fase {
-        font-size: 18px;
-    }
-
-    .info {
-        gap: 15px;
-
-        font-size: 14px;
-    }
-
-    .controle {
-        width: 60px;
-        height: 60px;
-
-        font-size: 25px;
-    }
-
-    #proximaFase {
+    .cabecalho-jogo p {
         font-size: 15px;
+    }
 
-        padding: 10px 20px;
+    .informacoes {
+        gap: 20px;
+
+        font-size: 16px;
+    }
+
+    .informacoes strong {
+        font-size: 19px;
+    }
+
+    .lista-fases {
+        grid-template-columns: 1fr;
+    }
+
+    .fases-box {
+        padding: 25px;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+    .final-box {
+        padding: 25px;
+    }
+
+    .final-box h1 {
+        font-size: 30px;
+    }
+
+    .trofeu {
+        font-size: 55px;
     }
 }
